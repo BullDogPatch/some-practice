@@ -1,6 +1,8 @@
+import { Link, useParams } from 'react-router-dom'
 import Moment from 'moment'
 
 const Article = ({ article }) => {
+  const params = useParams()
   return (
     <div className="article">
       <h3 style={{ textTransform: 'capitalize' }}>{article.topic}</h3>
@@ -18,6 +20,7 @@ const Article = ({ article }) => {
           {Moment(article.created_at).format('MMMM Do YYYY')}
         </p>
       </div>
+      <Link to={`/articles/${article.article_id}`}>See More</Link>
     </div>
   )
 }

@@ -1,17 +1,23 @@
-import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
-import './App.css'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Articles from './components/Articles'
+import ArticleById from './components/ArticleById'
+import './App.css'
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
       <Header />
-      <Articles />
-      <Footer />
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Articles />} />
+          <Route path="/articles/:article_id" element={<ArticleById />} />
+        </Routes>
+      </BrowserRouter>
+      {/* <Footer /> */}
     </div>
   )
 }

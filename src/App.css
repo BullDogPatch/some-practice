@@ -40,3 +40,9 @@ span {
 .article span {
   color: red;
 }
+
+.topic-image {
+  width: 100%;
+  max-width: 500px;
+  margin: 1rem 0;
+}

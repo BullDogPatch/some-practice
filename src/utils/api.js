@@ -6,3 +6,13 @@ export const fetchArticles = async () => {
   const { data } = await axios.get(`${baseUrl}/articles`)
   return data.articles
 }
+
+export const fetchArticlesByTopic = async topic => {
+  const { data } = await axios.get(`${baseUrl}/articles?topic=${topic}`)
+  return data.articles
+}
+
+export const fetchArticleById = async article_id => {
+  const { data } = await axios.get(`${baseUrl}/articles/${article_id}`)
+  return data
+}

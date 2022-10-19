@@ -1,10 +1,10 @@
 import { useQuery } from '@tanstack/react-query'
 import { useParams } from 'react-router-dom'
 import { fetchArticleById } from '../utils/api'
-
 import codingImage from '../images/coding.png'
 import cookingImage from '../images/cooking.png'
 import footballImage from '../images/football.png'
+import Votes from './Votes'
 import Loading from './Loading'
 
 const ArticleById = () => {
@@ -30,6 +30,7 @@ const ArticleById = () => {
       <div className="article-body">
         <p>{data.article.body}</p>
       </div>
+      <Votes article={data.article} />
     </div>
   )
 }

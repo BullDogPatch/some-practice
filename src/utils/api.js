@@ -26,3 +26,10 @@ export const fetchUsers = async () => {
   const { data } = await axios.get(`${baseUrl}/users`)
   return data.users
 }
+
+export const patchArticleById = async (id, value) => {
+  const { data } = await axios.patch(`${baseUrl}/articles/${id}`, {
+    inc_votes: value,
+  })
+  return data
+}

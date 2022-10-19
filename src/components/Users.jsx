@@ -5,6 +5,7 @@ import Loading from './Loading'
 
 const Users = () => {
   const { data, isLoading } = useQuery(['users'], fetchUsers)
+  console.log('Is it loading', isLoading)
 
   if (isLoading) return <Loading />
 

@@ -31,7 +31,7 @@ const ArticleById = () => {
       <div className="article-body">
         <p>{data.article.body}</p>
       </div>
-      <Votes article={data.article} />
+      <Votes votes={data.article.votes} article_id={data.article.article_id} />
       {/* <Vote article={data.article} /> */}
     </div>
   )

@@ -5,6 +5,7 @@ import codingImage from '../images/coding.png'
 import cookingImage from '../images/cooking.png'
 import footballImage from '../images/football.png'
 import Votes from './Votes'
+// import Vote from './Vote'
 import Loading from './Loading'
 
 const ArticleById = () => {
@@ -31,6 +32,7 @@ const ArticleById = () => {
         <p>{data.article.body}</p>
       </div>
       <Votes article={data.article} />
+      {/* <Vote article={data.article} /> */}
     </div>
   )
 }

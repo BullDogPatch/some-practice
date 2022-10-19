@@ -88,3 +88,10 @@ span {
 .article-body {
   margin: 2rem;
 }
+
+.votes {
+  width: 20%;
+  margin: 1rem auto;
+  font-size: 1.5rem;
+  font-weight: 700;
+}

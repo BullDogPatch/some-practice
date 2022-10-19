@@ -7,6 +7,11 @@ export const fetchArticles = async () => {
   return data.articles
 }
 
+export const fetchTopics = async () => {
+  const { data } = await axios.get(`${baseUrl}/topics`)
+  return data.topics
+}
+
 export const fetchArticlesByTopic = async topic => {
   const { data } = await axios.get(`${baseUrl}/articles?topic=${topic}`)
   return data.articles

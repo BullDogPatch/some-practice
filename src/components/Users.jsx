@@ -16,5 +16,5 @@ const Users = () => {
     </div>
   )
 }
-// some comment
+
 export default Users

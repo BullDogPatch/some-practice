@@ -1,25 +1,36 @@
+import { useState } from 'react'
 import { useMutation } from '@tanstack/react-query'
 import { patchArticleById } from '../utils/api'
 
 const Votes = ({ article }) => {
-  const { mutate } = useMutation(patchArticleById, {
-    onSuccess: () => {
-      console.log('Success')
-    },
-    onError: () => {
-      console.log('Error')
-    },
-  })
+  const [voteChange, setVoteChange] = useState(0)
+  const [error, setError] = useState(false)
 
-  const handleVote = vote => {
-    mutate({ articleById: article.article_id, inc_votes: vote })
+  const handleVoteChange = vote => {
+    setVoteChange(curr => curr + vote)
+    patchArticleById(article.article_id, vote).catch(err => {
+      setVoteChange(curr => curr - vote)
+      setError(true)
+    })
   }
 
   return (
     <div className="votes">
-      <button onClick={() => handleVote(1)}>Upvote</button>
-      <p>Votes: {article.votes}</p>
-      <button onClick={() => handleVote(-1)}>Downvote</button>
+      <p>Votes: {article.votes + voteChange}</p>
+      <button
+        disabled={voteChange === 1}
+        className="vote-btn"
+        onClick={() => handleVoteChange(1)}
+      >
+        Upvote
+      </button>
+      <button
+        disabled={voteChange === -1}
+        className="vote-btn"
+        onClick={() => handleVoteChange(-1)}
+      >
+        Downvote
+      </button>
     </div>
   )
 }

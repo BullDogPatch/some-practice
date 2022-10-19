@@ -16,19 +16,19 @@ const ArticleById = () => {
   if (isLoading) return <Loading />
 
   return (
-    <div>
-      <h3>{data?.article.title}</h3>
+    <div className="article-by-id">
+      <h3>{data.article.title}</h3>
 
-      <p>{data?.article.topic}</p>
-      {data?.article.topic === 'coding' ? (
+      <p>{data.article.topic}</p>
+      {data.article.topic === 'coding' ? (
         <img className="topic-image" src={codingImage} alt="coding" />
-      ) : data?.article.topic === 'cooking' ? (
+      ) : data.article.topic === 'cooking' ? (
         <img className="topic-image" src={cookingImage} alt="cooking" />
       ) : (
         <img className="topic-image" src={footballImage} alt="football" />
       )}
-      <div>
-        <p>{data?.article.body}</p>
+      <div className="article-body">
+        <p>{data.article.body}</p>
       </div>
     </div>
   )

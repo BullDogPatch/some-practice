@@ -1,5 +1,9 @@
 const Header = () => {
-  return <h1>Some News Feed</h1>
+  return (
+    <header className="header">
+      <h1>Some News Feed</h1>
+    </header>
+  )
 }
 
 export default Header

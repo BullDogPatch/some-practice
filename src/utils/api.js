@@ -21,3 +21,8 @@ export const fetchArticleById = async article_id => {
   const { data } = await axios.get(`${baseUrl}/articles/${article_id}`)
   return data
 }
+
+export const fetchUsers = async () => {
+  const { data } = await axios.get(`${baseUrl}/users`)
+  return data.users
+}

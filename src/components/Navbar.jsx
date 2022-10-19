@@ -4,13 +4,16 @@ import { fetchTopics } from '../utils/api'
 
 const Navbar = () => {
   const { data, isLoading } = useQuery(['topicLink'], fetchTopics)
-  console.log('Topics', data)
 
   return (
     <nav>
       <div>
         {data?.map(topic => (
-          <NavLink to={`/${topic.slug}`} key={topic.slug}>
+          <NavLink
+            to={`/${topic.slug}`}
+            key={topic.slug}
+            className="topic-link"
+          >
             {topic.slug}
           </NavLink>
         ))}

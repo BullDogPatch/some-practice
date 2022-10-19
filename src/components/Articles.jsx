@@ -1,11 +1,12 @@
 import { useQuery } from '@tanstack/react-query'
 import { fetchArticles } from '../utils/api'
 import Article from './Article'
+import Loading from './Loading'
 
 const Articles = () => {
   const { data, isLoading, isError } = useQuery(['articles'], fetchArticles)
 
-  if (isLoading) return <h3>Loading...</h3>
+  if (isLoading) return <Loading />
 
   return (
     <ul>

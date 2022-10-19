@@ -1,8 +1,7 @@
-import { Link, useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Moment from 'moment'
 
 const Article = ({ article }) => {
-  const params = useParams()
   return (
     <div className="article">
       <h3 style={{ textTransform: 'capitalize' }}>{article.topic}</h3>

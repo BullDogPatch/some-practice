@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Articles from './components/Articles'
 import ArticleById from './components/ArticleById'
+import ArticlesByTopic from './components/ArticlesByTopic'
 import './App.css'
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Articles />} />
+          <Route path="/:topic" element={<ArticlesByTopic />} />
           <Route path="/articles/:article_id" element={<ArticleById />} />
         </Routes>
       </BrowserRouter>

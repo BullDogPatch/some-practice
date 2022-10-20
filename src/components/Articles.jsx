@@ -8,7 +8,7 @@ const Articles = () => {
   const [sortBy, setSortBy] = useState('created_at')
   const [orderBy, setOrderBy] = useState('desc')
   const { data, isLoading, isError } = useQuery(
-    ['articles', sortBy, orderBy],
+    ['articles', { sortBy, orderBy }],
     () => fetchAllArticles(sortBy, orderBy)
   )
 
@@ -38,7 +38,7 @@ const Articles = () => {
         </select>
       </div>
       <ul>
-        {data?.map(article => (
+        {data.map(article => (
           <Article key={article.article_id} article={article} />
         ))}
       </ul>

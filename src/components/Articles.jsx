@@ -1,26 +1,22 @@
 import { useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
-import { fetchArticles, fetchAllArticles } from '../utils/api'
+import { fetchAllArticles } from '../utils/api'
 import Article from './Article'
 import Loading from './Loading'
 
 const Articles = () => {
-  const { data, isLoading, isError } = useQuery(['articles'], fetchArticles)
-  // fetchAll Articles takes a sortBy and orderBy query parameter
-  // const [sortBy, setSortBy] = useState('created_at')
-  // const [orderBy, setOrderBy] = useState('desc')
-  // const { data, isLoading, isError } = useQuery(
-  //   ['articles', { sortBy, orderBy }],
-  //   fetchAllArticles
-  // )
-
-  console.log(data)
+  const [sortBy, setSortBy] = useState('created_at')
+  const [orderBy, setOrderBy] = useState('desc')
+  const { data, isLoading, isError } = useQuery(
+    ['articles', sortBy, orderBy],
+    () => fetchAllArticles(sortBy, orderBy)
+  )
 
   if (isLoading) return <Loading />
 
   return (
     <>
-      {/* <div className="sort-container">
+      <div className="sort-container">
         <label htmlFor="sort_by">Sort: </label>
         <select
           id="sort_by"
@@ -40,7 +36,7 @@ const Articles = () => {
           <option value="desc">Descending</option>
           <option value="asc">Ascending</option>
         </select>
-      </div> */}
+      </div>
       <ul>
         {data?.map(article => (
           <Article key={article.article_id} article={article} />

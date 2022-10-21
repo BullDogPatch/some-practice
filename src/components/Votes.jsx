@@ -20,6 +20,7 @@ const Votes = ({ article_id, votes }) => {
         Votes: <span>{votes + voteChange}</span>
       </p>
       <button
+        style={voteChange === 1 ? { color: 'green' } : null}
         disabled={voteChange === 1}
         className="vote-btn"
         onClick={() => handleVoteChange(1)}

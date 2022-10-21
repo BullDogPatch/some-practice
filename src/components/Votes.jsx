@@ -20,8 +20,8 @@ const Votes = ({ article_id, votes }) => {
         Votes: <span>{votes + voteChange}</span>
       </p>
       <button
-        style={voteChange === 1 ? { color: 'green' } : null}
         disabled={voteChange === 1}
+        style={voteChange === 1 ? { color: 'green' } : null}
         className="vote-btn"
         onClick={() => handleVoteChange(1)}
       >
@@ -29,6 +29,7 @@ const Votes = ({ article_id, votes }) => {
       </button>
       <button
         disabled={voteChange === -1}
+        style={voteChange === -1 ? { color: 'red' } : null}
         className="vote-btn"
         onClick={() => handleVoteChange(-1)}
       >

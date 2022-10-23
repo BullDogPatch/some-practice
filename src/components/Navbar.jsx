@@ -1,9 +1,8 @@
 import { NavLink } from 'react-router-dom'
-import { useQuery } from '@tanstack/react-query'
-import { fetchTopics } from '../utils/api'
+import { useTopics } from '../hooks/useTopics'
 
 const Navbar = () => {
-  const { data, isLoading } = useQuery(['topicLink'], fetchTopics)
+  const { data } = useTopics()
 
   return (
     <nav>

@@ -1,15 +1,12 @@
 import { useNavigate, useParams } from 'react-router-dom'
-import { useQuery } from '@tanstack/react-query'
-import { fetchArticlesByTopic } from '../utils/api'
+import { useArticlesByTopic } from '../hooks/useArticlesByTopic'
 import Article from './Article'
 import Loading from './Loading'
 
 const ArticlesByTopic = () => {
   const navigate = useNavigate()
   const { topic } = useParams()
-  const { data, isLoading } = useQuery(['articlesByTopic', topic], () =>
-    fetchArticlesByTopic(topic)
-  )
+  const { data, isLoading } = useArticlesByTopic(topic)
 
   if (isLoading) return <Loading />
 

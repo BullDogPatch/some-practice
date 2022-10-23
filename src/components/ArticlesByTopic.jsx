@@ -1,12 +1,12 @@
 import { useNavigate, useParams } from 'react-router-dom'
-import { useArticlesByTopic } from '../hooks/useArticlesByTopic'
+import { useFetchArticlesByTopic } from '../hooks/useFetchArticlesByTopic'
 import Article from './Article'
 import Loading from './Loading'
 
 const ArticlesByTopic = () => {
   const navigate = useNavigate()
   const { topic } = useParams()
-  const { data, isLoading } = useArticlesByTopic(topic)
+  const { data, isLoading } = useFetchArticlesByTopic(topic)
 
   if (isLoading) return <Loading />
 

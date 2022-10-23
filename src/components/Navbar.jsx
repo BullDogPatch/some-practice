@@ -1,8 +1,8 @@
 import { NavLink } from 'react-router-dom'
-import { useTopics } from '../hooks/useTopics'
+import { useFetchTopics } from '../hooks/useFetchTopics'
 
 const Navbar = () => {
-  const { data } = useTopics()
+  const { data } = useFetchTopics()
 
   return (
     <nav>

@@ -1,16 +1,12 @@
 import { useState } from 'react'
-import { useQuery } from '@tanstack/react-query'
-import { fetchAllArticles } from '../utils/api'
+import { useFetchAllArticles } from '../hooks/useFetchAllArticles'
 import Article from './Article'
 import Loading from './Loading'
 
 const Articles = () => {
   const [sortBy, setSortBy] = useState('created_at')
   const [orderBy, setOrderBy] = useState('desc')
-  const { data, isLoading, isError } = useQuery(
-    ['articles', { sortBy, orderBy }],
-    () => fetchAllArticles(sortBy, orderBy)
-  )
+  const { data, isLoading } = useFetchAllArticles(sortBy, orderBy)
 
   if (isLoading) return <Loading />
 

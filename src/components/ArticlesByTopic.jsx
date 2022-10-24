@@ -12,7 +12,15 @@ const ArticlesByTopic = () => {
 
   return (
     <div>
-      <button onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
+      <button
+        onClick={() => navigate('/')}
+        style={{
+          cursor: 'pointer',
+          padding: '7px',
+          borderRadius: '7px',
+          margin: '10px',
+        }}
+      >
         All Articles
       </button>
       {data.map(article => (

@@ -5,18 +5,12 @@ const Navbar = () => {
   const { data } = useFetchTopics()
 
   return (
-    <nav>
-      <div>
-        {data?.map(topic => (
-          <NavLink
-            to={`/${topic.slug}`}
-            key={topic.slug}
-            className="topic-link"
-          >
-            {topic.slug}
-          </NavLink>
-        ))}
-      </div>
+    <nav className="navbar">
+      {data?.map(topic => (
+        <NavLink to={`/${topic.slug}`} key={topic.slug} className="topic-link">
+          {topic.slug}
+        </NavLink>
+      ))}
     </nav>
   )
 }

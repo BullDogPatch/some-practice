@@ -4,11 +4,23 @@
   box-sizing: border-box;
 }
 
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   padding-top: 0;
+  text-align: center;
+} */
+
+body {
+  height: 100vh;
+}
+
+.container {
+  /* max-width: 1280px; */
+  margin: 0 auto;
+
+  height: 100vh;
   text-align: center;
 }
 
@@ -26,6 +38,18 @@ nav {
   margin-top: 0.5rem;
 }
 
+.navbar {
+  background-color: rgb(47, 45, 45);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  border-bottom: 3px solid red;
+}
+
 .topic-link {
   text-decoration: none;
   padding: 0.5rem;
@@ -34,6 +58,14 @@ nav {
 
 .topic-link:visited {
   color: inherit;
+}
+
+.articles-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .article {
@@ -75,9 +107,14 @@ span {
 /* article by id styling */
 
 .article-by-id {
-  border: 3px solid rgb(89, 88, 88);
+  /* border: 3px solid rgb(89, 88, 88); */
   margin: 2rem;
   line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .article-by-id h3 {
@@ -100,4 +137,61 @@ span {
   padding: 0.3rem;
   margin: 0.5rem;
   cursor: pointer;
+}
+
+/* below are the styles for comments and single comment */
+
+.comments-container {
+  /* width: 90%; */
+  margin: 1rem auto;
+}
+
+/* single comment */
+.comment-container {
+  width: 100%;
+  margin: 1rem auto;
+  padding: 1rem;
+  border: 3px solid #ccc;
+  border-radius: 10px;
+}
+
+.comment-body {
+  padding: 15px;
+  font-size: 1.5rem;
+}
+
+.comment-author {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.comment-author span {
+  color: red;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.comment-votes {
+  padding: 5px;
+
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.comment-votes span {
+  color: red;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.comment-created-at {
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding-bottom: 15px;
+}
+
+.comment-created-at span {
+  color: red;
+  font-weight: 700;
+  font-size: 1.2rem;
 }

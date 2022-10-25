@@ -4,6 +4,7 @@ import { fetchArticleById } from '../utils/api'
 import codingImage from '../images/coding.png'
 import cookingImage from '../images/cooking.png'
 import footballImage from '../images/football.png'
+import Comments from './Comments'
 import Votes from './Votes'
 // import Vote from './Vote'
 import Loading from './Loading'
@@ -33,6 +34,7 @@ const ArticleById = () => {
       </div>
       <Votes votes={data.article.votes} article_id={data.article.article_id} />
       {/* <Vote article={data.article} /> */}
+      <Comments article_id={data.article.article_id} />
     </div>
   )
 }

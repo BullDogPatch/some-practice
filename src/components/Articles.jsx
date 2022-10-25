@@ -12,7 +12,7 @@ const Articles = () => {
   if (isLoading) return <Loading />
 
   return (
-    <>
+    <div className="articles-container">
       <QueryForm
         sortBy={sortBy}
         setSortBy={setSortBy}
@@ -24,7 +24,7 @@ const Articles = () => {
           <Article key={article.article_id} article={article} />
         ))}
       </ul>
-    </>
+    </div>
   )
 }
 

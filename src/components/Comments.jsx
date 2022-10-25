@@ -10,6 +10,17 @@ const Comments = ({ article_id }) => {
 
   if (isLoading) return <Loading />
 
+  /* TODO: 
+    - fix styling to make it look like original Northcoders News.
+    - Create a API patch function to be able to add ability to post comment.
+    - Create text area for somewhere for comment to be written.
+    - Make sure when user types in text area only that part renders when using 
+      React dev tools.
+    - Make sure when using React-Query to use useMutation hook
+      and invalidate queries using correct query key telling React-Query to
+      update
+  */
+
   return (
     <div className="comments-container">
       {data.map(comment => (

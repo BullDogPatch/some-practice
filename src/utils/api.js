@@ -55,3 +55,11 @@ export const fetchCommentsForArticle = async article_id => {
   const { data } = await axios.get(`${baseUrl}/articles/${article_id}/comments`)
   return data.comments
 }
+
+export const postComment = async (article_id, body) => {
+  const { data } = await axios.post(
+    `${baseUrl}/articles/${article_id}/comments`,
+    body
+  )
+  return data.comments
+}

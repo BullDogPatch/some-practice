@@ -34,7 +34,10 @@ const ArticleById = () => {
       </div>
       <Votes votes={data.article.votes} article_id={data.article.article_id} />
       {/* <Vote article={data.article} /> */}
-      <Comments article_id={data.article.article_id} />
+      <Comments
+        article_id={data.article.article_id}
+        commentCount={data.article.comment_count}
+      />
     </div>
   )
 }

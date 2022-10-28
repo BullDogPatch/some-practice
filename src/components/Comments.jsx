@@ -1,9 +1,12 @@
+import { useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { fetchCommentsForArticle } from '../utils/api'
 import Moment from 'moment'
 import Loading from './Loading'
+import PostComment from './PostComment'
 
-const Comments = ({ article_id }) => {
+const Comments = ({ article_id, commentCount }) => {
+  const [commentTotal, setCommentTotal] = useState(commentCount)
   const { data, isLoading } = useQuery(['comments', article_id], () =>
     fetchCommentsForArticle(article_id)
   )
@@ -23,6 +26,11 @@ const Comments = ({ article_id }) => {
 
   return (
     <div className="comments-container">
+      <PostComment
+        article_id={article_id}
+        commentTotal={commentTotal}
+        setCommentTotal={setCommentTotal}
+      />
       {data.map(comment => (
         <div key={comment.comment_id} className="comment-container">
           <p className="comment-body">{comment.body}</p>

@@ -1,4 +1,7 @@
 import { Link } from 'react-router-dom'
+import codingImage from '../images/coding.png'
+import cookingImage from '../images/cooking.png'
+import footballImage from '../images/football.png'
 import Moment from 'moment'
 
 const Article = ({ article }) => {
@@ -6,13 +9,20 @@ const Article = ({ article }) => {
     <div className="article">
       <h3 style={{ textTransform: 'capitalize' }}>{article.topic}</h3>
       <h2>{article.title}</h2>
+      {article.topic === 'coding' ? (
+        <img className="topic-image" src={codingImage} alt="coding" />
+      ) : article.topic === 'cooking' ? (
+        <img className="topic-image" src={cookingImage} alt="cooking" />
+      ) : (
+        <img className="topic-image" src={footballImage} alt="football" />
+      )}
       <p className="body">{article.body}</p>
       <div className="stats">
-        <p>
+        {/* <p>
           <span>Author</span>: {article.author}
-        </p>
+        </p> */}
         <p>
-          <span>Votes</span>: {article.votes}
+          <span>Comments</span>: {article.comment_count}
         </p>
         <p>
           <span>Created at</span>:{' '}

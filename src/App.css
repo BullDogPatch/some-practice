@@ -13,7 +13,7 @@
 } */
 
 body {
-  height: 100vh;
+  height: 100%;
 }
 
 .container {
@@ -96,6 +96,14 @@ span {
 
 .article span {
   color: red;
+}
+
+.topic-articles-container {
+  width: 50%;
+  margin: 0 auto;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .topic-image {

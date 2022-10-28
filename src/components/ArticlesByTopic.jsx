@@ -11,7 +11,10 @@ const ArticlesByTopic = () => {
   if (isLoading) return <Loading />
 
   return (
-    <div>
+    <div
+      // style={{ width: '60%', margin: '0 auto' }}
+      className="topic-articles-container"
+    >
       <button
         onClick={() => navigate('/')}
         style={{
